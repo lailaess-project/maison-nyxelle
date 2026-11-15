@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON NYXELLE | Luxury Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+    COMPLIMENTARY SHIPPING ON ORDERS OVER 900 DH
+</div>
+
+<!-- HEADER -->
+<header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a href="#home">HOME</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#about">OUR STORY</a>
+    </nav>
+
+    <a href="#home" class="logo">
+        MAISON NYXELLE
+        <span>BEYOND TRENDS. TIMELESS ELEGANCE.</span>
+    </a>
+
+    <div class="header-right">
+        <a href="#contact">CONTACT</a>
+        <button onclick="toggleCart()" class="cart-btn">
+            BAG (<span id="cart-count">0</span>)
+        </button>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="subtitle">AUTUMN / WINTER COLLECTION 2026</p>
+
+        <h1>
+            Elegance is<br>
+            <em>an attitude.</em>
+        </h1>
+
+        <p>
+            Discover a world where timeless design
+            meets contemporary femininity.
+        </p>
+
+        <a href="#collection" class="main-btn">
+            EXPLORE COLLECTION →
+        </a>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="introduction">
+    <p class="subtitle">THE NYXELLE PHILOSOPHY</p>
+
+    <h2>Less, but <em>better.</em></h2>
+
+    <p>
+        We believe true elegance lies in simplicity.
+        Every piece is thoughtfully designed to celebrate
+        individuality, confidence and timeless beauty.
+    </p>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+
+    <div class="section-title">
+        <p class="subtitle">CURATED FOR YOU</p>
+        <h2>Discover Our <em>Collection</em></h2>
+    </div>
+
+    <div class="categories">
+        <button onclick="filterProducts('all')">ALL</button>
+        <button onclick="filterProducts('clothing')">CLOTHING</button>
+        <button onclick="filterProducts('dresses')">DRESSES</button>
+        <button onclick="filterProducts('accessories')">ACCESSORIES</button>
+    </div>
+
+    <div class="products" id="products">
+
+        <div class="product" data-category="clothing">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=85" alt="Elegant blazer">
+            <h3>The Signature Blazer</h3>
+            <p>890 DH</p>
+            <button onclick="addToCart('The Signature Blazer',890)">ADD TO BAG +</button>
+        </div>
+
+        <div class="product" data-category="dresses">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=85" alt="Elegant dress">
+            <h3>The Nocturne Dress</h3>
+            <p>760 DH</p>
+            <button onclick="addToCart('The Nocturne Dress',760)">ADD TO BAG +</button>
+        </div>
+
+        <div class="product" data-category="clothing">
+            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=85" alt="Fashion outfit">
+            <h3>The Heritage Set</h3>
+            <p>1,190 DH</p>
+            <button onclick="addToCart('The Heritage Set',1190)">ADD TO BAG +</button>
+        </div>
+
+        <div class="product" data-category="accessories">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85" alt="Luxury handbag">
+            <h3>The Essential Bag</h3>
+            <p>990 DH</p>
+            <button onclick="addToCart('The Essential Bag',990)">ADD TO BAG +</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- CAMPAIGN -->
+<section class="campaign">
+    <div class="campaign-content">
+        <p class="subtitle">A NEW PERSPECTIVE</p>
+        <h2>Timeless by<br><em>nature.</em></h2>
+        <p>
+            Fashion fades. Style remains.
+            Discover pieces designed beyond seasons.
+        </p>
+        <a href="#collection" class="main-btn">DISCOVER MORE →</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Fashion editorial">
+    </div>
+
+    <div class="about-text">
+        <p class="subtitle">OUR STORY</p>
+        <h2>The beauty of<br><em>being timeless.</em></h2>
+
+        <p>
+            MAISON NYXELLE is a fictional luxury fashion
+            house built on the idea of effortless elegance.
+            We celebrate refined silhouettes, thoughtful
+            details and a modern vision of femininity.
+        </p>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="contact">
+    <p class="subtitle">THE NYXELLE LETTER</p>
+    <h2>Stay in <em>our world.</em></h2>
+    <p>Be the first to discover our latest collections.</p>
+
+    <form onsubmit="subscribe(event)">
+        <input type="email" id="email" placeholder="Your email address" required>
+        <button type="submit">SUBSCRIBE →</button>
+    </form>
+
+    <p id="message"></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>MAISON NYXELLE</h2>
+    <p>BEYOND TRENDS. TIMELESS ELEGANCE.</p>
+
+    <div class="footer-links">
+        <a href="#home">HOME</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 MAISON NYXELLE.
+        FICTIONAL BRAND — DEMONSTRATION PROJECT.
+    </p>
+</footer>
+
+<!-- SHOPPING CART -->
+<div class="cart-panel" id="cart">
+    <button onclick="toggleCart()" class="close-cart">✕</button>
+    <h2>Your Shopping Bag</h2>
+
+    <div id="cart-items">
+        <p>Your bag is empty.</p>
+    </div>
+
+    <h3>Total: <span id="total">0</span> DH</h3>
+
+    <button class="checkout" onclick="checkout()">
+        CHECKOUT
+    </button>
+
+    <small>Demo store — no real payment.</small>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
